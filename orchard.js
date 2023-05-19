@@ -51,7 +51,19 @@ const pinkPrice = .55
 
 // CODE HERE
 
+// Here I'm using for loops for each of the arrays to add them all together and store them into the totalAcres variable. 
+let totalAcres = 0
 
+for (let i = 0; i < fujiAcres.length; i++){
+    totalAcres += fujiAcres[i]
+}
+for (let i = 0; i < galaAcres.length; i++){
+    totalAcres += galaAcres[i]
+}
+for (let i = 0; i < pinkAcres.length; i++){
+    totalAcres += pinkAcres[i]
+}
+console.log(`The total amount of acres are ${totalAcres}`)
 
 
 
@@ -69,6 +81,9 @@ const pinkPrice = .55
 
 // CODE HERE
 
+//I added the length of each array together and then divided the total acres by the total length and then stored that data into the new variable
+averageDailyAcres = totalAcres / (fujiAcres.length + galaAcres.length + pinkAcres.length)
+console.log(`The average daily acre is ${averageDailyAcres}`)
 
 
 
@@ -107,6 +122,13 @@ let days = 0
 
 // CODE HERE
 
+// Calculates how many days it will take to harvest all of the apples from the remaining acres by using the average amount of acres per day.
+while(acresLeft > 0){
+    acresLeft -= averageDailyAcres
+    days++
+}
+console.log(days)
+
 
 
 // PROBLEM 4
@@ -135,11 +157,29 @@ let days = 0
 
 // CODE HERE
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+// I created tempory arrays that I could menipulate without touching the original array's data set.
+let fujiTempAcres = fujiAcres.slice(0,fujiAcres.length)
+let galaTempAcres = galaAcres.slice(0,galaAcres.length)
+let pinkTempAcres = pinkAcres.slice(0,pinkAcres.length)
+let acreYield = 6.5
+// Empty array's for the tons that will be calculated later
+let fujiTons = []
+let galaTons = []
+let pinkTons = []
 
-
+//For loops that will run the length of the orginal array's data set and will take the data from the temporary array's and multiply it by the daily yield. Then it pushes the new data into the empty array's. 
+for (let i = 0; i < fujiAcres.length; i++){
+    fujiTons.push(fujiTempAcres.shift()*acreYield)
+}
+for (let i = 0; i < galaAcres.length; i++){
+    galaTons.push(galaTempAcres.shift()*acreYield)
+}
+for (let i = 0; i < fujiAcres.length; i++){
+    pinkTons.push(pinkTempAcres.shift()*acreYield)
+}
+console.log(`${fujiTons} tons yielded per day by Fuji` )
+console.log(`${galaTons} tons yielded per day by Gala`)
+console.log(`${pinkTons} tons yielded per day by Pink`)
 
 
 
@@ -162,12 +202,25 @@ let days = 0
 
 // CODE HERE 
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+//Empty "pounds" variable to be used later
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
+//used a for loop to take the data from the "Tons" array's, convirte the individual data to punds and then add them all together. Then it stores the totals into the "Pounds" variables
+for (let i = 0; i < fujiTons.length; i++){
+    fujiPounds += fujiTons[i] * 2000
+}
+for (let i = 0; i < galaTons.length; i++){
+    galaPounds += galaTons[i] * 2000
+}
+for (let i = 0; i < pinkTons.length; i++){
+    pinkPounds += pinkTons[i] * 2000
+}
 
-
+console.log(`Total pounds of Fuji Apples: ${fujiPounds.toLocaleString(3)}lbs`)
+console.log(`Total pounds of Fuji Apples: ${galaPounds.toLocaleString(3)}lbs`)
+console.log(`Total pounds of Fuji Apples: ${pinkPounds.toLocaleString(3)}lbs`)
 
 
 
@@ -189,11 +242,14 @@ let days = 0
 
 // CODE HERE
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+//I used the given "Price" variables and multiplied them to the "Pounds" varbiables to get the profit for each type. Then stored the total profit data into the "profit" variables
+let fujiProfit = fujiPrice * fujiPounds
+let galaProfit = galaPrice * galaPounds
+let pinkProfit = pinkPrice * pinkPounds
 
-
+console.log(`Fuji Apples made $${fujiProfit.toLocaleString(3)} of profit this week`)
+console.log(`Gala Apples made $${galaProfit.toLocaleString(3)} of profit this week`)
+console.log(`Pink Apples made $${pinkProfit.toLocaleString(3)} of profit this week`)
 
 
 
@@ -209,3 +265,8 @@ let days = 0
 */
 
 // CODE HERE
+
+//Here i added all of the "Profit" variables together and stored them into a totalProfit variable.
+let totalProfit = fujiProfit + galaProfit + pinkProfit
+
+console.log(`The total profit made this week is $${totalProfit.toLocaleString(3)}!`)
