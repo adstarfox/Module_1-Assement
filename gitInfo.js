@@ -10,6 +10,7 @@
 */
 
 //CODE HERE
+gitDefinition = `git is a program that allows you to take snapshots of the progress that you have made within your code. it allows you to save the code you have now and allows you to then go and change your code further. If you happen to break your code beyond repair you can go back and access the snapshot and start from that point again`
 
 //////////////////PROBLEM 2////////////////////
 /*
@@ -18,6 +19,8 @@
 */
 
 //CODE HERE
+gitHubDefinition = `GitHub is a website where you can remotely store your repositories and share that code with other people.`
+
 
 //////////////////PROBLEM 3////////////////////
 /*
@@ -26,6 +29,7 @@
 */
 
 //CODE HERE
+gitInitDefinition = `git init is a piece of code that you enter into the terminal. it starts a local repository in the folder that you are currently accessing`
 
 //////////////////PROBLEM 4////////////////////
 /*
@@ -34,6 +38,7 @@
 */
 
 //CODE HERE
+gitCloneDefinition = `git clone is where you make and entire clone of the the repository and save it to another folder. `
 
 //////////////////PROBLEM 5////////////////////
 /*
@@ -42,6 +47,7 @@
 */
 
 //CODE HERE
+gitStatusDefinition = `The git status command allows you to see where you are at in your repository and what is needed to be done to complete it`
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -53,6 +59,8 @@
 */
 
 //CODE HERE
+gitAddDefinition = `The git add command allows you to add the files that you would like to track in your repository`
+gitAddCode = `git add .`
 
 //////////////////PROBLEM 7////////////////////
 /*
@@ -64,6 +72,8 @@
 */
 
 //CODE HERE
+gitCommitDefinition = `The git commit command is where you fully save your repository and you take that snapshot of your code that you can then access later if need be`
+gitCommitCode = `git commit -m "initial commit`
 
 
 //////////////////PROBLEM 8////////////////////
@@ -73,3 +83,4 @@
 */
 
 //CODE HERE
+gitPushDefinition = `You use the git push command to push your snapshot to a remote repository like GitHub. `
